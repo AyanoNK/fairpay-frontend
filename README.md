@@ -2,7 +2,21 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+Before anything, install the dependencies with npm:
+
+```bash
+npm install
+```
+
+This app uses Hasura to communicate to a GraphQL server.
+To set it up, create an `.env` file in the root of the project and add the following variables:
+
+```bash
+HASURA_KEY=your-hasura-key
+HASURA_URL=https://your-hasura-urll.hasura.app/v1/graphql
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev

@@ -104,7 +104,14 @@ export default function Page({ params }: Props) {
         router.push(`/table/${params.id}/pay`);
       });
     }
-  }, [addedCustomerVisits, addedCustomerVisitsLoading]);
+  }, [
+    addedCustomerVisits,
+    addedCustomerVisitsLoading,
+    addBulkCustomerProducts,
+    addedProducts,
+    params.id,
+    router,
+  ]);
 
   const handleAddProduct = (productId: number) => {
     setAddedProducts((prev) => ({

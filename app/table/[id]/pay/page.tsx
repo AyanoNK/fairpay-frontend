@@ -68,14 +68,20 @@ export default function Page({ params }: Props) {
       <div className="grid grid-cols-2 gap-4">
         {data &&
           data.visits_customervisit.map((customerVisit: CustomerVisit) => (
-            <div className="col-span-2 md:col-span-1 flex flex-col gap-3 rounded border p-4">
+            <div
+              className="col-span-2 md:col-span-1 flex flex-col gap-3 rounded border p-4"
+              key={customerVisit.id}
+            >
               <span className="font-bold text-lg">
                 Customer {customerVisit.customer}
               </span>
               <div className="flex flex-col gap-1">
                 {customerVisit.visits_customervisitproducts.map(
                   (customerVisitProduct: CustomerVisitProduct) => (
-                    <div className="flex flex-row flex-wrap gap-1">
+                    <div
+                      className="flex flex-row flex-wrap gap-1"
+                      key={customerVisitProduct.id}
+                    >
                       <span>{customerVisitProduct.products_product.name}</span>
                       <span>{`\$${customerVisitProduct.products_product.price}`}</span>
                     </div>

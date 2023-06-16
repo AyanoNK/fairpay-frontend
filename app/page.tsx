@@ -21,7 +21,9 @@ export default function Home() {
         <div className="justify-center grid grid-cols-3 gap-8">
           {loading && <p className="col-span-3">Loading...</p>}
           {data &&
-            data.tables_table.map((table: Table) => <Table table={table} />)}
+            data.tables_table.map((table: Table) => (
+              <Table key={table.alias} table={table} />
+            ))}
         </div>
       </section>
     </div>
